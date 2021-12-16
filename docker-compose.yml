@@ -67,19 +67,19 @@ services:
       - search-engine-network
     depends_on:
       - mysql
-  kibana:
-    container_name: search-engine-kibana
-    build:
-      context: docker/kibana
-      dockerfile: Dockerfile
-      args:
-        ELK_VERSION: $ELK_VERSION
-    ports:
-      - "5601:5601"
-    networks:
-      - search-engine-network
-    depends_on:
-      - elasticsearch
+#  kibana:
+#    container_name: search-engine-kibana
+#    build:
+#      context: docker/kibana
+#      dockerfile: Dockerfile
+#      args:
+#        ELK_VERSION: $ELK_VERSION
+#    ports:
+#      - "5601:5601"
+#    networks:
+#      - search-engine-network
+#    depends_on:
+#      - elasticsearch
 networks:
   search-engine-network:
 

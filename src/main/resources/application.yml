@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: 'jdbc:mysql://localhost:3306/search_engine_db?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+    url: 'jdbc:mysql://mysql:3306/search_engine_db?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
     username: user
     password: password
     hikari:
@@ -26,7 +26,7 @@ spring:
 
   elasticsearch:
     connection-timeout: 10s
-    uris: "http://localhost:9200"
+    uris: "http://elasticsearch:9200"
 
 
 app:
