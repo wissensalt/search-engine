@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: 'jdbc:mysql://localhost:3306/search_engine_db?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+    username: user
+    password: password
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+      connection-test-query: 'SELECT 1'
+      connection-timeout: 3000
+  jpa:
+    properties:
+      show_sql: true
+      format_sql: true
+      hibernate:
+        jdbc:
+          batch_size: 1000000
+        order_inserts: true
+  flyway:
+    enabled: true
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+
+  elasticsearch:
+    connection-timeout: 10s
+    uris: "http://localhost:9200"
+
+
+app:
+  seeding:
+    enabled: false
+    maxRow: 1000000
