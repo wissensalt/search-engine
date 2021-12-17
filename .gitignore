@@ -39,3 +39,7 @@ out/
 gradle
 gradlew.bat
 gradlew
+
+search-engine-ui/package-lock.json
+search-engine-ui/.mvn/
+search-engine-ui/.gitignore

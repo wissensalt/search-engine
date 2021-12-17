@@ -1,11 +1,14 @@
 package com.wissensalt.searchengine;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.util.StopWatch;
 
@@ -34,5 +37,10 @@ public class SearchEngineApplication implements CommandLineRunner {
 			stopWatch.stop();
 			log.info("Finished seeding in {} milliseconds", stopWatch.getTotalTimeMillis());
 		}
+	}
+
+	@Bean
+	public OpenAPI customOpenAPI() {
+		return new OpenAPI().info(new Info().title("Search Engine"));
 	}
 }

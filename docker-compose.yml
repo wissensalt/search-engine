@@ -67,6 +67,15 @@ services:
       - search-engine-network
     depends_on:
       - mysql
+  ui:
+    container_name: search-engine-ui
+    build:
+      context: search-engine-ui
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - search-engine-network
 #  kibana:
 #    container_name: search-engine-kibana
 #    build:
